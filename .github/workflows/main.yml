@@ -1,6 +1,5 @@
 on: [push]
-
- name: AzureARMDeploy
+name: AzureARMDeploy
 
 jobs:
   
@@ -13,10 +12,10 @@ jobs:
      with:
         creds: ${{ secrets.SRI_SECRET_CRED }}
     
-    - name: checkout source code
-      uses: actions/checkout@v1
+   - name: checkout source code
+     uses: actions/checkout@v1
       
-    - name: ARM deployement
+   - name: ARM deployement
       uses:azure/CLI@v1
       with:
             az deployement create
