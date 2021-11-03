@@ -20,7 +20,7 @@ jobs:
       with: 
         az deployment create
          --resource-group BABURG
-         --template-file:template.json
+         --template-file:. /template.json
 
       
          
