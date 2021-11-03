@@ -3,24 +3,24 @@ name: AzureARMDeploy
 
 jobs:
   
- deploy:
-   runs-on: ubuntu-latest
-   steps:
+    deploy:
+    runs-on: ubuntu-latest
+    steps:
 
-   - name: Login to Azure           
-     uses: azure/login@v1
-     with:
-        creds: ${{ secrets.SRI_SECRET_CRED }}
+    - name: Login to Azure           
+      uses: azure/login@v1
+      with:
+         creds: ${{ secrets.SRI_SECRET_CRED }}
     
-   - name: checkout source code
-     uses: actions/checkout@v1
+    - name: checkout source code
+      uses: actions/checkout@v1
      
-   - name: ARM deployement
-     uses: azure/CLI@v1
-     with: 
+    - name: ARM deployement
+      uses: azure/CLI@v1
+      with: 
         az deployment create
-         --resource-Group BABURG
-         -template:template.json
+         --resource-group BABURG
+         --template-file:template.json
 
       
          
