@@ -19,4 +19,5 @@ jobs:
      uses: azure/CLI@v1
      with:
             inlinescript: |
-             az deployment group create --resource-group BABURG template: ./template.json
+             az deployment group create --resource-group BABURG --name webappAccountDeployement
+             template: ./template.json
