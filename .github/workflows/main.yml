@@ -1,23 +1,26 @@
 on: [push]
-name: AzureARMDeploy
+
+ name: AzureARMDeploy
 
 jobs:
   
  deploy:
-  runs-on: ubuntu-latest
-  steps:
+   runs-on: ubuntu-latest
+   steps:
 
    - name: Login to Azure           
      uses: azure/login@v1
      with:
         creds: ${{ secrets.SRI_SECRET_CRED }}
     
-   - name: checkout source code
-     uses: actions/checkout@v1
+    - name: checkout source code
+      uses: actions/checkout@v1
       
-   - name: ARM deployement
-     uses: azure/CLI@v1
-     with:
-            inlinescript: |
-             az deployment group create --resource-group BABURG --name webappAccountDeployement
-             template: ./template.json
+    - name: ARM deployement
+      uses:azure/CLI@v1
+      with:
+            az deployement create
+            --resource-Group Name: BABURG
+            template: ./template.json
+
+
