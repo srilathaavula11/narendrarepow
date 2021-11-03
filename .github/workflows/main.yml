@@ -21,6 +21,6 @@ jobs:
          inlinescript: |
           az deployement create
           --resource-Group BABURG --name mywebapp
-         --template: ./template.json
+          --template: ./template.json
 
 
