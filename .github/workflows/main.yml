@@ -14,13 +14,11 @@ jobs:
     
    - name: checkout source code
      uses: actions/checkout@v1
-      
+     
    - name: ARM deployement
      uses: azure/CLI@v1
-     with:
-         inlinescript: |
-          az deployment create
-          --resource-Group BABURG
-          --template: ./template.json
-
-
+     with
+      
+         az deployment create
+         --resource-Group BABURG
+         -template:template.json
