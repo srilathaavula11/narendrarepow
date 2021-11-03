@@ -18,5 +18,6 @@ jobs:
    - name: ARM deployement
      uses: azure/CLI@v1
      with:
+            inlinescript: |
             resourceGroupName: BABURG
             template: ./template.json
