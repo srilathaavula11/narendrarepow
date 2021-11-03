@@ -16,10 +16,11 @@ jobs:
      uses: actions/checkout@v1
       
    - name: ARM deployement
-      uses:azure/CLI@v1
-      with:
-            az deployement create
-            --resource-Group Name: BABURG
-            template: ./template.json
+     uses: azure/CLI@v1
+     with:
+         inlinescript: |
+          az deployement create
+         --resource-Group Name: BABURG
+         template: ./template.json
 
 
