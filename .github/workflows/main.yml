@@ -17,8 +17,10 @@ jobs:
      
    - name: ARM deployement
      uses: azure/CLI@v1
-     with
-      
-         az deployment create
+     with: 
+        az deployment create
          --resource-Group BABURG
          -template:template.json
+
+      
+         
